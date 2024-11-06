@@ -31,3 +31,10 @@ const options = {
   console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
   console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
   
+  const flatpickr = require("flatpickr");
+  import flatpickr from "flatpickr";
+  import "flatpickr/dist/flatpickr.min.css";
+
+  import iziToast from "izitoast";
+  import "izitoast/dist/css/iziToast.min.css";
+  
