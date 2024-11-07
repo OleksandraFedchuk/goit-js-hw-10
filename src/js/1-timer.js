@@ -37,3 +37,7 @@ const options = {
   import iziToast from "izitoast";
   import "izitoast/dist/css/iziToast.min.css";
   
+const elements = {
+  label : document.querySelector('.label'),
+  value : document.querySelector('.value')
+}
