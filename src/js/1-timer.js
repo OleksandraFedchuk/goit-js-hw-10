@@ -1,3 +1,21 @@
+const elements = {
+  timer: document.querySelector('.timer'),
+  days : document.querySelector('span[data-days]'),
+  hours: document.querySelector('span[data-hours]'),
+  minutes : document.querySelector('span[data-minutes]'),
+  seconds : document.querySelector('span[data-secondrs]'),
+  button: document.querySelector('button[data-start]')
+}
+
+let userSelectedDate = null ; 
+elements.button.disabled = true;
+
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
+}
+
+
+
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -37,7 +55,3 @@ const options = {
   import iziToast from "izitoast";
   import "izitoast/dist/css/iziToast.min.css";
   
-const elements = {
-  label : document.querySelector('.label'),
-  value : document.querySelector('.value')
-}
