@@ -14,16 +14,7 @@ function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 };
 
-// function timer {
 
-//   start(){
-//     if(isActive){
-//       return; 
-//      }
-// const dateNow = Date.now;
-//   }
-
-// }
 
 
 const options = {
