@@ -56,7 +56,7 @@ const options = {
   import iziToast from "izitoast";
   import "izitoast/dist/css/iziToast.min.css";
 
-  elements.button.addEventListener("click" , timer.start);
+  elements.button.addEventListener("click" , elements.timer.start);
 
   
   
