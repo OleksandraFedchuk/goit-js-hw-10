@@ -63,10 +63,10 @@ function addLeadingZero(value) {
 }
 
 function updateTimerFace({days, hours, minutes, seconds}) {
-  elements.days = addLeadingZero(days);
-  elements.hours = addLeadingZero(hours);
-  elements.minutes = addLeadingZero(minutes);
-  elements.seconds = addLeadingZero(seconds);
+  elements.days.textContent = addLeadingZero(days);
+  elements.hours.textContent = addLeadingZero(hours);
+  elements.minutes.textContent = addLeadingZero(minutes);
+  elements.seconds.textContent = addLeadingZero(seconds);
 };
 
 let countInterval = null; 
