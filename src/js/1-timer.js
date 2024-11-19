@@ -10,7 +10,7 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
+    userSelectedDate = selectedDates[0];
     validateDate();
   },
 
@@ -23,12 +23,13 @@ const elements = {
   days : document.querySelector('span[data-days]'),
   hours: document.querySelector('span[data-hours]'),
   minutes : document.querySelector('span[data-minutes]'),
-  seconds : document.querySelector('span[data-secondrs]'),
+  seconds : document.querySelector('span[data-seconds]'),
   button: document.querySelector('button[data-start]'),
   picker: document.querySelector('#datetime-picker'),
 }
 
 let userSelectedDate = null ; 
+elements.button.disabled = userSelectedDate === null || userSelectedDate < Date.now();
 
 function validateDate(){
   if (userSelectedDate < Date.now()){
@@ -38,9 +39,9 @@ function validateDate(){
       closeOnEscape: true,
       closeOnClick: true,
     });
-    elements.button = true;
+    elements.button.disabled = true;
   } else {
-    elements.button = false;
+    elements.button.disabled = false;
   }
 }
 
@@ -67,6 +68,7 @@ function updateTimerFace({days, hours, minutes, seconds}) {
   elements.hours.textContent = addLeadingZero(hours);
   elements.minutes.textContent = addLeadingZero(minutes);
   elements.seconds.textContent = addLeadingZero(seconds);
+  return
 };
 
 let countInterval = null; 
@@ -78,8 +80,8 @@ const delta = userSelectedDate - Date.now() ;
 if (delta <= 0){
   clearInterval(countInterval);
   updateTimerFace({ days: "00", hours: "00", seconds: "00"});
-  elements.button = true; 
-  elements.picker = false;
+  elements.button.disabled = true; 
+  elements.picker.disabled = false;
   return;
 }
 const time = convertMs(delta);
@@ -88,15 +90,14 @@ updateTimerFace(time);
 }
 
 elements.button.addEventListener("click", () => {
-if(!userSelectedDate)
-  return;
+if(!userSelectedDate) return;
 
 if(countInterval){
   clearInterval(countInterval);
 }
 
-elements.picker = true ;
-elements.button = true;
+elements.picker.disabled = true ;
+elements.button.disabled = true;
 
 startCount();
   
