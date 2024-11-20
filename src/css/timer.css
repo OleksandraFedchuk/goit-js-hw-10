@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+
+.button {
+background-color: blue;
+}
+
+.timer {
+
+}
+
+.field {
+
+}
+
+.value {
+
+}
+
+.label {
+
+}
