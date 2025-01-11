@@ -1,14 +1,28 @@
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+
+const elements = {
+    btn : document.querySelector('.button'),
+    input : document.querySelector('.input'),
+    fulfilled : document.querySelector('.fulfilled'),
+    rejected : document.querySelector('.rejected'),
+    fieldset : document.querySelector('.fieldset'),
+    label : document.querySelector('.label'),
+    form: document.querySelector('.form')
+}
+
+
 const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
         if(isSucess){
-            resolve("This function is resolved");
+            resolve("Fulfilled promise in ${delay} ms");
         }else{
             reject("This function is rejected");
         }
     }, 2000
     )
 })
-const isSucess = false ;
+const isSucess = true ;
 console.log(promise);
 
 promise.then(value => {console.log(value);
@@ -17,14 +31,7 @@ promise.then(value => {console.log(value);
 )
 
 
-const elements = {
-    btn : document.querySelector('.button'),
-    input : document.querySelector('.input'),
-    fulfilled : document.querySelector('.fulfilled'),
-    rejected : document.querySelector('.rejected'),
-    fieldset : document.querySelector('.fieldset'),
-    label : document.querySelector('.label')
-}
+
 
 console.log(elements.label);
 
