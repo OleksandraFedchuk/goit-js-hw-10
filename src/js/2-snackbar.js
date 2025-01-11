@@ -16,6 +16,17 @@ promise.then(value => {console.log(value);
 ).finally(() => console.log(promise)
 )
 
-const btn = document.querySelector('.button');
-console.log(btn);
+
+const elements = {
+    btn : document.querySelector('.button'),
+    input : document.querySelector('.input'),
+    fulfilled : document.querySelector('.fulfilled'),
+    rejected : document.querySelector('.rejected'),
+    fieldset : document.querySelector('.fieldset'),
+    label : document.querySelector('.label')
+}
+
+console.log(elements.label);
+
+
 
