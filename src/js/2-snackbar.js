@@ -10,38 +10,8 @@ const elements = {
     label : document.querySelector('.label'),
     form: document.querySelector('.form'),
 }
- 
-console.log(elements.fulfilled);
 
-
-// const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         if(isSucess){
-//             resolve("Fulfilled promise in ${delay} ms");
-//         }else{
-//             reject("This function is rejected");
-//         }
-//     }, 2000
-//     )
-// })
-
-const isSucess = true ;
-
-
-
-
-const promise = new Promise ((reject, fulfilled) => {
-reject(console.log(`❌ Rejected promise in ${delay}ms`));
-fulfilled(console.log(`✅ Fulfilled promise in ${delay}ms`));
-}
-)
-
-promise.then(value => {console.log(value);
-}).catch(error => {console.log(error)}
-).finally(() => console.log(promise)
-)
-
-elements.btn.addEventListner('click', handlerEvent);
+elements.form.addEventListener("submit", handlerEvent);
 
 function handlerEvent(evt) {
 evt.preventDefault(),
@@ -51,6 +21,40 @@ evt.target
 const upForm = new FormData(elements.form);
 const delay = upForm.get("delay");
 const state = upForm.get("state");
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if(state === "fulfilled"){
+            console.log(`✅ Fulfilled promise in ${delay}ms`);
+        }else{
+            console.log(`❌ Rejected promise in ${delay}ms`); 
+        }
+    },delay);
+});
+
+promise
+.then(message => {
+  iziToast.show({
+      class: "wave-stroke",  
+      title: "OK",
+      message: message,
+      position: "topRight",
+      closeOnEscape: true,
+      closeOnClick: true,
+      backgroundColor: "#59a10d",
+  });
+})
+.catch(error => {
+  iziToast.show({
+      class: "wave-stroke",   
+      title: "Error!",
+      message: error,
+      position: "topRight",
+      closeOnEscape: true,
+      closeOnClick: true,
+      backgroundColor: "#ef4040",
+  });
+});
 
 
 
