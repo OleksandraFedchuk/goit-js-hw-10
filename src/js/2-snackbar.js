@@ -2,7 +2,7 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 const elements = {
-    btn : document.querySelector('.button'),
+    btn : document.querySelector('.buttonn'),
     input : document.querySelector('.input'),
     fulfilled : document.querySelector('input[value="fulfilled"]'),
     rejected : document.querySelector('input[value="rejected"]'),
@@ -14,9 +14,9 @@ const elements = {
 elements.form.addEventListener("submit", handlerEvent);
 
 function handlerEvent(evt) {
-evt.preventDefault(),
+evt.preventDefault();
 evt.target
-}
+
 
 const upForm = new FormData(elements.form);
 const delay = upForm.get("delay");
@@ -25,9 +25,9 @@ const state = upForm.get("state");
 const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
         if(state === "fulfilled"){
-            console.log(`✅ Fulfilled promise in ${delay}ms`);
+            resolve(`✅ Fulfilled promise in ${delay}ms`);
         }else{
-            console.log(`❌ Rejected promise in ${delay}ms`); 
+            reject(`❌ Rejected promise in ${delay}ms`); 
         }
     },delay);
 });
@@ -36,7 +36,6 @@ promise
 .then(message => {
   iziToast.show({
       class: "wave-stroke",  
-      title: "OK",
       message: message,
       position: "topRight",
       closeOnEscape: true,
@@ -47,16 +46,14 @@ promise
 .catch(error => {
   iziToast.show({
       class: "wave-stroke",   
-      title: "Error!",
       message: error,
       position: "topRight",
       closeOnEscape: true,
       closeOnClick: true,
-      backgroundColor: "#ef4040",
+      backgroundColor: "#e3545b",
   });
 });
-
-
+}
 
 
 

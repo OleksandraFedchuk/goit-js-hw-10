@@ -79,7 +79,7 @@ const delta = userSelectedDate - Date.now() ;
 
 if (delta <= 0){
   clearInterval(countInterval);
-  updateTimerFace({ days: "00", hours: "00", seconds: "00"});
+  updateTimerFace({ days: "00", hours: "00",minutes: "00", seconds: "00"});
   elements.button.disabled = true; 
   elements.picker.disabled = false;
   return;

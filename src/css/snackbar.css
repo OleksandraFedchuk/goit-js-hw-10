@@ -36,7 +36,7 @@
     display: flex;
     gap: 48px;
 }
-.btn {
+.buttonn {
     border-radius: 8px;
     padding: 8px 16px;
     width: 360px;
@@ -48,7 +48,7 @@
     letter-spacing: 0.04em;
     color: #fff;
 }
-.btn:hover {
+.buttonn:hover {
     background-color: #6c8cff;
 }
 .wave-stroke {
