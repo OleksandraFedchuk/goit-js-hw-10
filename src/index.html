@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
     <main>
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-      <a href="./1-timer.html"></a>
-      <a href="./2-snackbar.html"></a>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link {=$highlight-act}" href="./1-timer.html">Timer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {=$highlight-curr}" href="./2-snackbar.html">Snackbar</a>
+        </li>
+      </ul>
     </main>
   </body>
 </html>

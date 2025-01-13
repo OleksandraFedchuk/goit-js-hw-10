@@ -15,7 +15,6 @@ elements.form.addEventListener("submit", handlerEvent);
 
 function handlerEvent(evt) {
 evt.preventDefault();
-evt.target
 
 
 const upForm = new FormData(elements.form);
